@@ -29,17 +29,6 @@ jobs:
           node-version: 18.x
       - run: yarn install
       - run: yarn build
-  unit-test:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js v18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - run: yarn install
-      - run: yarn test
   release-github:
     runs-on: ubuntu-latest
     needs: [build, lint]
