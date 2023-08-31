@@ -1947,6 +1947,16 @@
     "@smithy/util-buffer-from" "^2.0.0"
     tslib "^2.5.0"
 
+"@subrelay/nestjs-queue@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@subrelay/nestjs-queue/-/nestjs-queue-1.1.0.tgz#b59bcab84a06511bac7189e39b675277597100a8"
+  integrity sha512-GHjHQJpZYfqZyM/xYmUoAFSlTpo3usA/4azHEmQ5vZt3fphy2kmL0Bjxt2RLNarSCIeEwosvroFjc8O7J8bXow==
+  dependencies:
+    "@golevelup/nestjs-discovery" "^4.0.0"
+    bullmq "^4.8.0"
+    sqs-consumer "^7.0.3"
+    sqs-producer "^3.1.1"
+
 "@substrate/connect-extension-protocol@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@substrate/connect-extension-protocol/-/connect-extension-protocol-1.0.1.tgz#fa5738039586c648013caa6a0c95c43265dbe77d"
@@ -4901,16 +4911,6 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
-
-nestjs-queue@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/nestjs-queue/-/nestjs-queue-1.0.7.tgz#08f501a477d77843583ae761dcd6f4b777b40534"
-  integrity sha512-QCEavtB9L201QlWhch8vbyUaGmBNaKUVsDJqa6bw4FqnkJjfAdqAM/G6vqG7x7pYHuxuUyVYiy5G1qBQecwLXw==
-  dependencies:
-    "@golevelup/nestjs-discovery" "^4.0.0"
-    bullmq "^4.8.0"
-    sqs-consumer "^7.0.3"
-    sqs-producer "^3.1.1"
 
 nock@^13.3.1:
   version "13.3.3"

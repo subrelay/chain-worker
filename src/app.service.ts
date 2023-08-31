@@ -1,9 +1,9 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import { QueueService } from 'nestjs-queue';
 import { ChainInfo } from './chain';
 import { EventRecord } from '@polkadot/types/interfaces';
+import { QueueService } from '@subrelay/nestjs-queue';
 
 @Injectable()
 export class AppService implements OnModuleInit {
