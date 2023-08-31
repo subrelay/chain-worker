@@ -38,7 +38,11 @@ export class AppService implements OnModuleInit {
     const _ = await this.api.rpc.chain.subscribeFinalizedHeads(
       async (lastHeader) => {
         this.logger.debug(
-          `${this.chainInfo.chainId}_${this.chainInfo.version} ---> Processing block ${lastHeader.hash}`,
+          `[${this.queueService.getProducerQueueType(
+            this.configService.get('QUEUE_NAME'),
+          )}] ${this.chainInfo.chainId}_${
+            this.chainInfo.version
+          } ---> Processing block ${lastHeader.hash.toString().substring(55)}`,
         );
 
         const data = await this.parseBlock(lastHeader.hash.toString());

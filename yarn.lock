@@ -1947,10 +1947,10 @@
     "@smithy/util-buffer-from" "^2.0.0"
     tslib "^2.5.0"
 
-"@subrelay/nestjs-queue@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@subrelay/nestjs-queue/-/nestjs-queue-1.1.0.tgz#b59bcab84a06511bac7189e39b675277597100a8"
-  integrity sha512-GHjHQJpZYfqZyM/xYmUoAFSlTpo3usA/4azHEmQ5vZt3fphy2kmL0Bjxt2RLNarSCIeEwosvroFjc8O7J8bXow==
+"@subrelay/nestjs-queue@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@subrelay/nestjs-queue/-/nestjs-queue-1.1.1.tgz#30833e4e9176d221bc7b99ca1da87219d9c5c93a"
+  integrity sha512-4Sd8exNXIUZZWL+8IclUveZbc4QC6fdwSozqSAqAVKca3Xy30UxU1rxJbwfYCBTluQDVhJkDEjOI1OI92LZSKw==
   dependencies:
     "@golevelup/nestjs-discovery" "^4.0.0"
     bullmq "^4.8.0"
