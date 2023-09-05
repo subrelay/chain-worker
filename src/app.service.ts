@@ -1,9 +1,9 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import { QueueService } from 'nestjs-queue';
 import { ChainInfo } from './chain';
 import { EventRecord } from '@polkadot/types/interfaces';
+import { QueueService } from '@subrelay/nestjs-queue';
 
 @Injectable()
 export class AppService implements OnModuleInit {
@@ -38,11 +38,15 @@ export class AppService implements OnModuleInit {
     const _ = await this.api.rpc.chain.subscribeFinalizedHeads(
       async (lastHeader) => {
         this.logger.debug(
-          `${this.chainInfo.chainId}_${this.chainInfo.version} ---> Processing block ${lastHeader.hash}`,
+          `[${this.queueService.getProducerQueueType(
+            this.configService.get('QUEUE_NAME'),
+          ).toLocaleUpperCase()}] ${this.chainInfo.chainId}_${
+            this.chainInfo.version
+          } ---> Processing block ${lastHeader.hash.toString().substring(55)}`,
         );
 
         const data = await this.parseBlock(lastHeader.hash.toString());
-        await this.queueService.send('block', { id: data.id, body: data });
+        await this.queueService.send(this.configService.get('QUEUE_NAME'), { id: data.id, body: data });
       },
     );
   }

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { QueueModule } from 'nestjs-queue';
+import { QueueModule } from '@subrelay/nestjs-queue';
 
 @Module({
   imports: [
