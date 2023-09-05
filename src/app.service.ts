@@ -40,13 +40,13 @@ export class AppService implements OnModuleInit {
         this.logger.debug(
           `[${this.queueService.getProducerQueueType(
             this.configService.get('QUEUE_NAME'),
-          )}] ${this.chainInfo.chainId}_${
+          ).toLocaleUpperCase()}] ${this.chainInfo.chainId}_${
             this.chainInfo.version
           } ---> Processing block ${lastHeader.hash.toString().substring(55)}`,
         );
 
         const data = await this.parseBlock(lastHeader.hash.toString());
-        await this.queueService.send('block', { id: data.id, body: data });
+        await this.queueService.send(this.configService.get('QUEUE_NAME'), { id: data.id, body: data });
       },
     );
   }
